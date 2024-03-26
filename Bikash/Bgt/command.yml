@@ -14,10 +14,10 @@ SETTINGS_COMMAND : ["settings", "setting"]
 RELOAD_COMMAND : ["admincache", "reload"]
 GSTATS_COMMAND : ["gstats"]
 STATS_COMMAND : ["stats"]
-LANGUAGE_COMMAND : ["lang", "language", "langs"]
+LANGUAGE_COMMAND : ["dil", "language", "langs"]
 
 # Play Commands
-PLAY_COMMAND : ["play", "bgt", "/bgt", "vplay", "cplay", "cvplay", "playforce", "vplayforce", "cplayforce", "cvplayforce"]
+PLAY_COMMAND : ["oynat", "bgt", "/bgt", "vplay", "cplay", "cvplay", "playforce", "vplayforce", "cplayforce", "cvplayforce"]
 PLAYMODE_COMMAND : ["playmode", "bgtmode"]
 CHANNELPLAY_COMMAND : ["channelplay"]
 STREAM_COMMAND : ["stream", "cstream", "streamforce"]
@@ -29,8 +29,8 @@ DELETEPLAYLIST_COMMAND : ["deleteplaylist"]
 
 # Tools
 QUEUE_COMMAND : ["queue","cqueue", "player", "cplayer", "playing", "cplaying"]
-SONG_COMMAND : ["song", "video"]
-LYRICS_COMMAND : ["lyrics", "lyric"]
+SONG_COMMAND : ["bul", "vbul"]
+LYRICS_COMMAND : ["sarkisozu", "lyric"]
 
 
 # Admin Commands
@@ -41,10 +41,10 @@ PAUSE_COMMAND : ["pause", "cpause"]
 RESUME_COMMAND : ["resume", "cresume"]
 MUTE_COMMAND : ["mute", "cmute"]
 UNMUTE_COMMAND : ["unmute", "cunmute"]
-STOP_COMMAND : ["stop", "end", "x", "cstop", "cend"]
-SKIP_COMMAND : ["skip", "cskip"]
+STOP_COMMAND : ["stop", "son", "x", "cstop", "cend"]
+SKIP_COMMAND : ["atla", "cskip"]
 SHUFFLE_COMMAND : ["shuffle", "cshuffle"]
-LOOP_COMMAND : ["loop", "cloop"]
+LOOP_COMMAND : ["dongu", "cloop"]
 SEEK_COMMAND : ["seek", "cseek", "seekback", "cseekback"]
 RESTART_COMMAND : ["restart", ".reset", "gpreboot"]
 
