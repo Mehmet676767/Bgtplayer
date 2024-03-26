@@ -207,7 +207,7 @@ str_3 : "Youtube canlı yayınları yayınlanamıyor. Canlı Format Bulunamadı"
 track_1 : " {0} En İyi 10 Çalma Listesi işleniyor \nBu işlem birkaç dakika sürebilir (yaklaşık 3-4 dakika). Lütfen Bekleyin...\n\n 👤İsteyen: {1}\n\nEn İyi 10 parçayı /gstats tarafından kontrol edin /gstats "
 track_2 : " Hata \n\nBot sunucularında {0} En İyi 10 Çalma Listesi yok. Lütfen başka bir çalma listesi deneyin"
 
-#ALETLER
+#TOOLS
 
 #Lyrics
 Lyrics_1 : " Kullanım: \n\n/lyrics [ Müzik Adı]"
@@ -220,7 +220,7 @@ ping_1 : "Pong!!!!"
 ping_2 : "{0}, {1} ms'lik bir ping ile iyi çalışıyor.\n\nBot'un çalışma süresi {2} ve sunucunun toplam {3} depolama alanını kullandı. Cpu yükü yaklaşık {4} ve tüketim {5} Ram. Py-Tgcalls istemcisi de {6} ms'lik iyi bir ping'e sahip."
 
 
-# Şarkı
+# song
 Song_1 : "YouTube'dan Müzik veya Videoyu yalnızca özel sohbette indirebilirsiniz. Lütfen beni özel sohbette başlatın."
 Song_2 : " Kullanım: \n\n/song [Müzik Adı] veya [Youtube Bağlantısı]"
 Song_3 : "Canlı Bağlantı Algılandı. Canlı YouTube videolarını indiremiyorum. "
@@ -233,22 +233,22 @@ Song_9 : "Youtube-DL'den şarkı indirilemedi\n\n Neden: {0}"
 Song_10 : "Sunuculardan gelen telgrafa yükleme başarısız oldu."
 Song_11 : "Yükleme Başladı\n\nYükleme hızı yavaş olabilir. Lütfen bekleyin.."
 
-# Araçlar - Sıra
+# Tools - Queue
 queue_1 : "Lütfen Bekleyin.. Sıra getiriliyor.."
 queue_2 : "Sıraya Alınmış Liste boş. Parça bulunamadı"
 queue_3 : "<u> Sıraya Alınan Parçalar:</u> [Sıraya Alınan Diğer Parçalara Buradan Göz Atın]({0})"
 queue_4 : "⏳ #{0}'da Sıraya Eklendi\n\n💡Başlık: {1}\n ⏱Süre: {2}\n👤 Ekleyen: {3}"
 queue_5 : "Sırada yalnızca bir parça var. Lütfen kontrol listesine biraz daha ekleyin"
 
-# Tüm Akış Hatları
+# All Streaming Lines
 Stream_1 : "📡 Yayına Başlandı 💡\n🏷Başlık: [{0}]({1})\n⌛️ Süre : {2}\n👤 Talep Eden:** {3}"
 Stream_2 : "📡 💡\n👤 URL'si aracılığıyla Yayına Başlandı Talep Eden: {0}"
 Stream_3 : "📡 Yayına Başlandı 💡\n 🏷Başlık: {0}\n⌛️ Süre : {1}\n👤 Talep Eden: {2}"
 Stream_4 : "📡 Yayına Başlandı 💡\n 🏷Başlık: [{0}]({1})\n⌛️ Süre : {2}\n👤 Talep Eden: {3}"
 
-# Satır İçi Düğmeler
+# Inline Buttons
 
-#General Düğmeler
+#General buttons
 CLOSE_BUTTON : "🗑 Kapat"
 CLOSEMENU_BUTTON : "🗑 Menüyü Kapat"
 BACK_BUTTON : "⬅ Geri"
@@ -257,7 +257,7 @@ UNBAN_BUTTON : "🗑 Asistanın Yasağını Kaldır"
 #Lyrics
 L_B_1 : "🚀 Şarkı Sözlerini Şimdi Kontrol Et"
 
-# Başlangıç
+# Start
 S_B_1 : "🥀 Komutlar🥀"
 S_B_2 : "🥀 Ayarlar🥀"
 S_B_3 : "🥀 Destek🥀"
@@ -424,23 +424,22 @@ heroku_13 : "Mevcut güncellemeler kontrol ediliyor..."
 heroku_14 : "Git Komut Hatası"
 heroku_15 : "Geçersiz Git Deposu"
 
-#Private
- pbot_1 : "Kullanım:\n/yetkilendirme [CHAT_ID]"
- pbot_2 : "Kullanım:\n/[CHAT_ID] yetkisini kaldır"
- pbot_3 : "Verilen sohbet yetkili listeye eklendi"
- pbot_4 : "Verilen sohbet yetkili listeden kaldırıldı"
- pbot_5 : "Sohbet zaten yetkili listede"
- pbot_6 : "Yetkili listede böyle bir sohbet yok"
- pbot_7 : "Chat_id doğrulanamadı.\n\nSayısal ve doğru biçimde olduğundan emin olun. Sohbet kullanıcı adını veya bağlantılarını kullanmayın."
- pbot_8 : "Lütfen bekleyin.... Yetkili sohbetler getiriliyor."
- pbot_9 : "<b>Getirilen Sohbetler:</b>\n\n"
- pbot_10 : "Özel Sohbet"
- pbot_11 : "Yetkili sohbet bulunamadı"
- pbot_12 : "Özel Bot Modu devre dışı.\n\nBotunuzu özel bot olarak kullanmak için PRIVATE_BOT_MODE = True" olarak ayarladığınızdan emin olun"
- pbot_13 : "\n<b>Getirilmeyen Sohbetler:</b>\n\n"
+#Private bot mode
+pbot_1 : "**Usage:**\n/authorize [CHAT_ID]"
+pbot_2 :  "**Usage:**\n/unauthorize [CHAT_ID]"
+pbot_3 : "Added given chat to authorized list"
+pbot_4 : "Removed given chat from authorized list"
+pbot_5 : "Chat is already in the authorized list"
+pbot_6 : "No such chat exists in the authorized list"
+pbot_7 : "Failed to verify chat_id.\n\nMake sure its numeric and in correct format. Don't use chat username or links."
+pbot_8 : "Please wait.... Fetching Authorized chats."
+pbot_9 : "**<b>Fetched Chats:</b>**\n\n"
+pbot_10 : "Private Chat"
+pbot_11 : "No Authorized chats found"
+pbot_12 : "Private Bot Mode is disabled.\n\nTo use your bot as private bot make sure to set **PRIVATE_BOT_MODE** = **True**"
+pbot_13 : "\n**<b>Unfetched Chats:</b>**\n\n"
 
-
- #Gbanned
+# Gbanned
  gban_1 : "Kendini banlamak mı istiyorsun? Ne kadar aptalsın!"
  gban_2 : "Kendimi engellemeli miyim? Hahaha"
  gban_3 : "Bir Sudo kullanıcısını engellemek mi istiyorsunuz?"
