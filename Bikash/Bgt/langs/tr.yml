@@ -440,17 +440,18 @@ pbot_12 : "Private Bot Mode is disabled.\n\nTo use your bot as private bot make 
 pbot_13 : "\n**<b>Unfetched Chats:</b>**\n\n"
 
 # Gbanned
- gban_1 : "Kendini banlamak mı istiyorsun? Ne kadar aptalsın!"
- gban_2 : "Kendimi engellemeli miyim? Hahaha"
- gban_3 : "Bir Sudo kullanıcısını engellemek mi istiyorsunuz?"
- gban_4 : "{0} zaten bottan yasaklandı."
- gban_5 : "Küresel Yasaklama {0}'da başlatılıyor\n\nBeklenen Zaman: {1}."
- gban_6 : "Başarıyla Gbanlandı\n\n{0}, {1} sohbetten yasaklandı."
- gban_7 : "{0} henüz bottan yasaklanmadı."
- gban_8 : "{0} yasağı kaldırılıyor\n\nBeklenen Zaman: {1}."
- gban_9 : "Başarıyla Kaldırıldı\n\n{1} sohbetteki {0} yasağı kaldırıldı."
- gban_10 : "Hiç Gbanlı Kullanıcı Bulunamadı."
- gban_11 : "Lütfen bir süre bekleyin.. Gbanlı kullanıcı listesi getiriliyor"
+ gban_1 : "You want to gban yourself? How Fool!"
+gban_2 : "Should i block myself? Lol"
+gban_3 : "You want to block a sudo user?"
+gban_4 : "{0} is already **gbanned** from the bot."
+gban_5 : "**Initializing Global Ban on {0}**\n\nExpected Time : {1}."
+gban_6 : "**Gbanned Successfully**\n\nBanned **{0}** from **{1}** chats."
+gban_7 : "{0} is not **gbanned **yet from the bot."
+gban_8 : "**Ungbanning {0}**\n\nExpected Time : {1}."
+gban_9 : "**UnGbanned Successfully**\n\nUnbanned **{0}** in **{1}** chats."
+gban_10 : "No Gbanned Users Found."
+gban_11 : "Please wait a while.. Fetching Gbanned users list"
+
 
  #Suggestions
  sug_0 : "Biliyor musun?\n\n✅ "
