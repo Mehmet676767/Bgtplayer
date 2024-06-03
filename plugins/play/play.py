@@ -67,7 +67,7 @@ async def play_commnd(
         )
         return
     mystic = await message.reply_text(
-        _["play_2"].format(channel) if channel else _["play_1"]
+        _["oynat_2"].format(channel) if channel else _["oynat_1"]
     )
     plist_id = None
     slider = None
@@ -93,7 +93,7 @@ async def play_commnd(
     )
     if audio_telegram:
         if audio_telegram.file_size > config.TG_AUDIO_FILESIZE_LIMIT:
-            return await mystic.edit_text(_["play_5"])
+            return await mystic.edit_text(_["oynat_5"])
         duration_min = seconds_to_min(audio_telegram.duration)
         if (audio_telegram.duration) > config.DURATION_LIMIT:
             return await mystic.edit_text(
@@ -140,13 +140,13 @@ async def play_commnd(
         return
     elif video_telegram:
         if not await is_video_allowed(message.chat.id):
-            return await mystic.edit_text(_["play_3"])
+            return await mystic.edit_text(_["oynat_3"])
         if message.reply_to_message.document:
             try:
                 ext = video_telegram.file_name.split(".")[-1]
                 if ext.lower() not in formats:
                     return await mystic.edit_text(
-                        _["play_8"].format(f"{' | '.join(formats)}")
+                        _["oynat_8"].format(f"{' | '.join(formats)}")
                     )
             except:
                 return await mystic.edit_text(
@@ -200,7 +200,7 @@ async def play_commnd(
                     )
                 except Exception as e:
                     print(e)
-                    return await mystic.edit_text(_["play_3"])
+                    return await mystic.edit_text(_["oynat_3"])
                 streamtype = "playlist"
                 plist_type = "yt"
                 if "&" in url:
@@ -208,13 +208,13 @@ async def play_commnd(
                 else:
                     plist_id = url.split("=")[1]
                 img = config.PLAYLIST_IMG_URL
-                cap = _["play_10"]
+                cap = _["oynat_10"]
             else:
                 try:
                     details, track_id = await YouTube.track(url)
                 except Exception as e:
                     print(e)
-                    return await mystic.edit_text(_["play_3"])
+                    return await mystic.edit_text(_["oynat_3"])
                 streamtype = "youtube"
                 img = details["thumb"]
                 cap = _["play_11"].format(
@@ -257,7 +257,7 @@ async def play_commnd(
                     details, plist_id = await Spotify.album(url)
                 except Exception as e:
                     print(e)
-                    return await mystic.edit_text(_["play_3"])
+                    return await mystic.edit_text(_["oynat_3"])
                 streamtype = "playlist"
                 plist_type = "spalbum"
                 img = config.SPOTIFY_ALBUM_IMG_URL
@@ -269,7 +269,7 @@ async def play_commnd(
                     details, plist_id = await Spotify.artist(url)
                 except Exception as e:
                     print(e)
-                    return await mystic.edit_text(_["play_3"])
+                    return await mystic.edit_text(_["oynat_3"])
                 streamtype = "playlist"
                 plist_type = "spartist"
                 img = config.SPOTIFY_ARTIST_IMG_URL
@@ -277,17 +277,17 @@ async def play_commnd(
                     message.from_user.first_name
                 )
             else:
-                return await mystic.edit_text(_["play_17"])
+                return await mystic.edit_text(_["oynat_17"])
         elif await Apple.valid(url):
             if "album" in url:
                 try:
                     details, track_id = await Apple.track(url)
                 except Exception as e:
                     print(e)
-                    return await mystic.edit_text(_["play_3"])
+                    return await mystic.edit_text(_["oynat_3"])
                 streamtype = "youtube"
                 img = details["thumb"]
-                cap = _["play_11"].format(
+                cap = _["oynat_11"].format(
                     details["title"], details["duration_min"]
                 )
             elif "playlist" in url:
@@ -296,7 +296,7 @@ async def play_commnd(
                     details, plist_id = await Apple.playlist(url)
                 except Exception as e:
                     print(e)
-                    return await mystic.edit_text(_["play_3"])
+                    return await mystic.edit_text(_["oynat_3"])
                 streamtype = "playlist"
                 plist_type = "apple"
                 cap = _["play_13"].format(
@@ -304,13 +304,13 @@ async def play_commnd(
                 )
                 img = url
             else:
-                return await mystic.edit_text(_["play_16"])
+                return await mystic.edit_text(_["oynat_16"])
         elif await Resso.valid(url):
             try:
                 details, track_id = await Resso.track(url)
             except Exception as e:
                 print(e)
-                return await mystic.edit_text(_["play_3"])
+                return await mystic.edit_text(_["oynat_3"])
             streamtype = "youtube"
             img = details["thumb"]
             cap = _["play_11"].format(
@@ -409,7 +409,7 @@ async def play_commnd(
             details, track_id = await YouTube.track(query)
         except Exception as e:
             print(e)
-            return await mystic.edit_text(_["play_3"])
+            return await mystic.edit_text(_["oynat_3"])
         streamtype = "youtube"
     if str(playmode) == "Direct":
         if not plist_type:
@@ -434,7 +434,7 @@ async def play_commnd(
                     "f" if fplay else "d",
                 )
                 return await mystic.edit_text(
-                    _["play_15"],
+                    _["oynat_15"],
                     reply_markup=InlineKeyboardMarkup(buttons),
                 )
         try:
@@ -501,7 +501,7 @@ async def play_commnd(
                 await mystic.delete()
                 await message.reply_photo(
                     photo=details["thumb"],
-                    caption=_["play_11"].format(
+                    caption=_["oynat_11"].format(
                         details["title"].title(),
                         details["duration_min"],
                     ),
@@ -538,7 +538,7 @@ async def play_music(client, CallbackQuery, _):
     if CallbackQuery.from_user.id != int(user_id):
         try:
             return await CallbackQuery.answer(
-                _["playcb_1"], show_alert=True
+                _["oynatcb_1"], show_alert=True
             )
         except Exception as e:
             print(e)
@@ -558,18 +558,18 @@ async def play_music(client, CallbackQuery, _):
         print(e)
         pass
     mystic = await CallbackQuery.message.reply_text(
-        _["play_2"].format(channel) if channel else _["play_1"]
+        _["play_2"].format(channel) if channel else _["oynat_1"]
     )
     try:
         details, track_id = await YouTube.track(vidid, True)
     except Exception as e:
         print(e)
-        return await mystic.edit_text(_["play_3"])
+        return await mystic.edit_text(_["oynat_3"])
     if details["duration_min"]:
         duration_sec = time_to_seconds(details["duration_min"])
         if duration_sec > config.DURATION_LIMIT:
             return await mystic.edit_text(
-                _["play_6"].format(
+                _["oynat_6"].format(
                     config.DURATION_LIMIT_MIN, details["duration_min"]
                 )
             )
@@ -644,7 +644,7 @@ async def play_playlists_command(client, CallbackQuery, _):
     if CallbackQuery.from_user.id != int(user_id):
         try:
             return await CallbackQuery.answer(
-                _["playcb_1"], show_alert=True
+                _["oynatcb_1"], show_alert=True
             )
         except Exception as e:
             print(e)
@@ -664,7 +664,7 @@ async def play_playlists_command(client, CallbackQuery, _):
         print(e)
         pass
     mystic = await CallbackQuery.message.reply_text(
-        _["play_2"].format(channel) if channel else _["play_1"]
+        _["oynat_2"].format(channel) if channel else _["oynat_1"]
     )
     videoid = lyrical.get(videoid)
     video = True if mode == "v" else None
@@ -681,19 +681,19 @@ async def play_playlists_command(client, CallbackQuery, _):
             )
         except Exception as e:
             print(e)
-            return await mystic.edit_text(_["play_3"])
+            return await mystic.edit_text(_["oynat_3"])
     if ptype == "spplay":
         try:
             result, spotify_id = await Spotify.playlist(videoid)
         except Exception as e:
             print(e)
-            return await mystic.edit_text(_["play_3"])
+            return await mystic.edit_text(_["oynat_3"])
     if ptype == "spalbum":
         try:
             result, spotify_id = await Spotify.album(videoid)
         except Exception as e:
             print(e)
-            return await mystic.edit_text(_["play_3"])
+            return await mystic.edit_text(_["oynat_3"])
     if ptype == "spartist":
         try:
             result, spotify_id = await Spotify.artist(videoid)
@@ -760,7 +760,7 @@ async def slider_queries(client, CallbackQuery, _):
         else:
             query_type = int(rtype + 1)
         try:
-            await CallbackQuery.answer(_["playcb_2"])
+            await CallbackQuery.answer(_["oynatcb_2"])
         except:
             pass
         title, duration_min, thumbnail, vidid = await YouTube.slider(
@@ -771,7 +771,7 @@ async def slider_queries(client, CallbackQuery, _):
         )
         med = InputMediaPhoto(
             media=thumbnail,
-            caption=_["play_11"].format(
+            caption=_["oynat_11"].format(
                 title.title(),
                 duration_min,
             ),
@@ -785,7 +785,7 @@ async def slider_queries(client, CallbackQuery, _):
         else:
             query_type = int(rtype - 1)
         try:
-            await CallbackQuery.answer(_["playcb_2"])
+            await CallbackQuery.answer(_["oynatcb_2"])
         except:
             pass
         title, duration_min, thumbnail, vidid = await YouTube.slider(
